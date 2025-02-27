@@ -14,16 +14,17 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f4f4f9; /* 背景色を優しい色に */
+  color: #333; /* 文字色を暗めにして読みやすく */
 }
 
 /* ============================= */
 /* 📌 上部固定ナビゲーションバー（サイドバーを上に配置） */
 /* ============================= */
-/* test */
 .sb-sidenav {
   width: 100%;
   height: 60px;
-  background-color: #343a40;
+  background-color: #007bff; /* サイドバーの背景色をブルーに */
   color: white;
   display: flex;
   align-items: center;
@@ -45,7 +46,7 @@ body, html {
 }
 
 .sb-sidenav a:hover {
-  background-color: #495057;
+  background-color: #0056b3; /* ホバー時の色をダークブルーに */
 }
 
 /* ============================= */
@@ -59,6 +60,7 @@ body, html {
   align-items: center;
   height: auto;
   overflow-y: auto;
+  background-color: #fff; /* 背景を白に */
 }
 
 /* ============================= */
@@ -81,13 +83,14 @@ body, html {
   width: 100%;
   min-width: 400px;
   max-width: 1250px;
-  background-color: white;
+  background-color: #ffffff; /* 背景色を白に */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
   text-align: center;
   height: auto;
   overflow: hidden;
+  border: 1px solid #e0e0e0; /* カレンダーの境界線に薄いグレー */
 }
 
 @media (max-width: 1024px) {
@@ -116,7 +119,7 @@ body, html {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #4bc74f;
+  background-color: #28a745; /* ヘッダーの背景色を緑色に */
   color: white;
   border-radius: 8px;
   width: 100%;
@@ -193,7 +196,7 @@ body, html {
 .memo-indicator {
   font-size: auto;
   font-weight: bold;
-  color: red;
+  color: #e74c3c; /* メモの色を赤に */
   margin-top: 5px;
   bottom: 10px;
   width: 100%;
@@ -286,7 +289,7 @@ body, html {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #ffffff;
   padding: 30px;
   border-radius: 10px;
   width: 100%;
@@ -315,14 +318,14 @@ textarea {
 }
 
 #saveMemo {
-  background-color: #4bc74f;
+  background-color: #28a745;
   color: white;
   border: none;
   transition: background-color 0.3s ease;
 }
 
 #saveMemo:hover {
-  background-color: #45a847;
+  background-color: #218838;
 }
 
 #closeModal {
