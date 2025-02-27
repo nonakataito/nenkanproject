@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カレンダー</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<!-- 📌 ヘッダー（固定） -->
+<header class="fixed-header">
+</header>
+
+<div class="wrapper">
+    <!-- 📌 サイドバー -->
+    <nav id="sidebar" class="sb-sidenav">
+        <a href="{% url 'nenkanapp:memo_list' %}" class="btn btn-secondary">メモ一覧</a>
+        <br><br>
+        <a href="{% url 'accounts:logout' %}" class="btn btn-secondary">ログアウト</a>
+    </nav>
+
+    <!-- 📌 カレンダーを固定 -->
+    <div id="content" class="content">
+        <div class="calendar-container">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prevMonth">前月</button>
+                    <h2 id="monthName">2025年1月</h2>
+                    <button id="nextMonth">次月</button>
+                </div>
+                <div class="calendar-days">
+                    <div class="day">日</div>
+                    <div class="day">月</div>
+                    <div class="day">火</div>
+                    <div class="day">水</div>
+                    <div class="day">木</div>
+                    <div class="day">金</div>
+                    <div class="day">土</div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- JavaScriptで日付を動的に追加 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- メモ入力用モーダル -->
+        <div class="modal" id="memoModal">
+            <div class="modal-content">
+                <h4 id="selectedDate"></h4>
+                <textarea id="memoText" placeholder="メモを入力"></textarea>
+                <button id="saveMemo" class="btn btn-success">保存</button>
+                <button id="closeModal" class="btn btn-danger">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap & JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/calendar.js' %}"></script>
+
+</body>
+</html>
