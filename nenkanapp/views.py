@@ -60,6 +60,7 @@ def save_memo(request):
 @csrf_exempt
 @login_required
 def delete_memo(request):
+    template_name = "memo_confirm_delete.html"
     if request.method == "POST":
         try:
             data = json.loads(request.body)
@@ -85,7 +86,7 @@ def delete_memo(request):
 class MemoDeleteView(LoginRequiredMixin, DeleteView):
     model = Memo
     template_name = "memo_confirm_delete.html"
-    success_url = reverse_lazy("memo_list")
+    success_url = reverse_lazy("nenkanapp:memo_list")  # 名前空間を含めて修正
     
     def get_queryset(self):
         return Memo.objects.filter(user=self.request.user)  # ユーザーのメモのみ削除可能
